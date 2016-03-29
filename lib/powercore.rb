@@ -1,0 +1,8 @@
+require_relative "powercore/array"
+require_relative "powercore/date"
+require_relative "powercore/fixnum"
+require_relative "powercore/hash"
+require_relative "powercore/kernel"
+require_relative "powercore/object"
+require_relative "powercore/proc"
+require_relative "powercore/string"
