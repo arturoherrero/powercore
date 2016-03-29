@@ -1,5 +1,8 @@
 # PowerCore
 
+[![Code Climate](https://codeclimate.com/github/arturoherrero/powercore/badges/gpa.svg)](https://codeclimate.com/github/arturoherrero/powercore)
+[![Build Status](https://travis-ci.org/arturoherrero/powercore.svg?branch=master)](https://travis-ci.org/arturoherrero/powercore)
+
 PowerCore extends the Ruby Core with useful extensions.
 
 There are Ruby gems doing something similar, some of the more popular are:
@@ -54,7 +57,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
 
 ## Array
 
-### `average`
+#### `average`
 
 Calculate the mean of the elements.
 
@@ -62,7 +65,7 @@ Calculate the mean of the elements.
 [1, 2, 3, 4].average  # => 2.5
 ```
 
-### Negative index `drop`
+#### Negative index `drop`
 
 Drop n elements from end of the array.
 
@@ -76,7 +79,7 @@ If you pass a positive number, it delegates to the original implementation.
 [1, 2, 3, 4].drop(2)  # => [3, 4]
 ```
 
-### `head`
+#### `head`
 
 Return the head of the array.
 
@@ -84,7 +87,7 @@ Return the head of the array.
 [1, 2, 3].head  # => 1
 ```
 
-### `histogram`
+#### `histogram`
 
 Build the histogram in a hash.
 
@@ -92,7 +95,7 @@ Build the histogram in a hash.
 [2, 1, 2, 2, 3, 3].histogram  # => {1=>1, 2=>3, 3=>2}
 ```
 
-### `mean`
+#### `mean`
 
 Calculate the mean of the elements.
 
@@ -100,7 +103,7 @@ Calculate the mean of the elements.
 [1, 2, 3, 4].mean  # => 2.5
 ```
 
-### `median`
+#### `median`
 
 Calculate the median of the elements.
 
@@ -109,7 +112,7 @@ Calculate the median of the elements.
 [1, 2, 3, 4].median     # => 2.5
 ```
 
-### `mode`
+#### `mode`
 
 Find the mode value/s.
 
@@ -119,7 +122,7 @@ Find the mode value/s.
 [1, 1, 2, 4, 4].mode  # => [1, 4]
 ```
 
-### `percentile`
+#### `percentile`
 
 Return the percentile value for a given percentage.
 
@@ -129,7 +132,7 @@ Return the percentile value for a given percentage.
 [1, 2, 3, 4, 5].percentile(50)  # => 3
 ```
 
-### `sum`
+#### `sum`
 
 Calculate the sum of the elements.
 
@@ -138,7 +141,7 @@ Calculate the sum of the elements.
 ["a", "b", "c"].sum  # => "abc"
 ```
 
-### Negative index `take`
+#### Negative index `take`
 
 Returns n elements from end of the array.
 
@@ -152,7 +155,7 @@ If you pass a positive number, it delegates to the original implementation.
 [1, 2, 3, 4].take(2)  # => [1, 2]
 ```
 
-### `tail`
+#### `tail`
 
 Return the tail of the array.
 
@@ -160,7 +163,7 @@ Return the tail of the array.
 [1, 2, 3, 4].tail  # => [2, 3, 4]
 ```
 
-### `transpose` array of ranges
+#### `transpose` array of ranges
 
 Assumes that self is an array of ranges and transposes the rows and columns.
 
@@ -177,7 +180,7 @@ It also works with the original implementation, assuming an array of arrays.
 
 ## Date
 
-### `now`
+#### `now`
 
 Return the current day.
 
@@ -188,7 +191,7 @@ Date.now  # => #<Date: 2016-03-29 ((2457477j,0s,0n),+0s,2299161j)>
 
 ## Fixnum
 
-### `clamp`
+#### `clamp`
 
 Clamp a comparable between a lower and upper bound.
 
@@ -202,7 +205,7 @@ Clamp a comparable between a lower and upper bound.
 8.clamp(3..6)  # => 6
 ```
 
-### `degrees`
+#### `degrees`
 
 Convert a number of degrees into radians.
 
@@ -210,7 +213,7 @@ Convert a number of degrees into radians.
 90.degrees  # => 1.5707963267948966
 ```
 
-### `negative`
+#### `negative`
 
 Negate the number.
 
@@ -218,7 +221,7 @@ Negate the number.
 1.negative  # => -1
 ```
 
-### `ordinal`
+#### `ordinal`
 
 Return the ordinal of the number.
 
@@ -230,7 +233,7 @@ Return the ordinal of the number.
 
 ## Hash
 
-### `compact`
+#### `compact`
 
 Return a copy of self with all nil elements removed.
 
@@ -238,7 +241,7 @@ Return a copy of self with all nil elements removed.
 {a: 1, b: nil, c: 3}.compact  # => {a: 1, c: 3}
 ```
 
-### `except`
+#### `except`
 
 Return the hash without keys specified.
 
@@ -258,7 +261,7 @@ my_proc = λ { }
 
 ## Object
 
-### `assert`
+#### `assert`
 
 Assert an expression.
 
@@ -267,7 +270,7 @@ assert(1 == 2)  # => AssertError: AssertError
 assert(1 == 1)  # => nil
 ```
 
-### `in?`
+#### `in?`
 
 Return true if self is present in the given object.
 
@@ -277,7 +280,7 @@ Return true if self is present in the given object.
 :b.in?({ a: 100, b: 200 })  # => true
 ```
 
-### `metaclass`
+#### `metaclass`
 
 Return the eigenclass.
 
@@ -285,7 +288,7 @@ Return the eigenclass.
 Object.new.metaclass  # => #<Class:#<Object:0x007fc6427d1058>>
 ```
 
-### `not_nil?`
+#### `not_nil?`
 
 Return true when an object is not nil.
 
@@ -294,7 +297,7 @@ nil.not_nil?  # => false
 1.not_nil?    # => true
 ```
 
-### Smalltalk's conditionals
+#### Smalltalk's conditionals
 
 Emulate Smalltalk's conditionals.
 
@@ -303,7 +306,7 @@ Emulate Smalltalk's conditionals.
 (4 == 2).--> { true } { false }  # => false
 ```
 
-### Pipe operator
+#### Pipe operator
 
 Pipe operator à la Bash/Elixir.
 
@@ -320,7 +323,7 @@ Pipe operator à la Bash/Elixir.
 
 ## Proc
 
-### >>
+#### >>
 
 Proc forward composition.
 
@@ -331,7 +334,7 @@ multiply_2_then_add_3 = multiply_2 >> sum_3
 multiply_2_then_add_3.call(3)  # => 9
 ```
 
-### <<
+#### <<
 
 Proc reverse composition.
 
@@ -345,7 +348,7 @@ sum_3_then_multiply_2.call(3)  # => 12
 
 ## String
 
-### `first`
+#### `first`
 
 Return the first chars of the string.
 
@@ -354,7 +357,7 @@ Return the first chars of the string.
 "abc".first(2)  # => "ab"
 ```
 
-### `last`
+#### `last`
 
 Return the last chars of the string.
 
@@ -363,7 +366,7 @@ Return the last chars of the string.
 "abc".last(2)  # => "bc"
 ```
 
-### `to_bool`
+#### `to_bool`
 
 Convert string to boolean.
 

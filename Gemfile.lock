@@ -32,6 +32,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    rake (11.1.2)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
@@ -58,6 +59,7 @@ PLATFORMS
 DEPENDENCIES
   guard-rspec
   pry
+  rake
   rspec
 
 BUNDLED WITH
