@@ -5,11 +5,11 @@
 
 PowerCore extends the Ruby Core with useful extensions.
 
-There are Ruby gems doing something similar, some of the more popular are:
+There are Ruby gems that do something similar, such as
 [ActiveSuppor Core Extensions][1] or [Powerpack][2].
 
-In this case, this is just a collection of extensions for reference, **not** a
-Ruby gem. Who wants a new dependency in the code base? So, just borrow the code
+In this case, this is just a collection of extensions for reference, *not* a
+Ruby gem. Who wants a new dependency in the code base? Just borrow the code
 that you consider useful, but be careful; most of the time I have created new
 methods but sometimes I have overridden the default Ruby implementation, or even
 worse, I have removed Ruby methods to do some tricks. Come and see!
