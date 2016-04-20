@@ -41,14 +41,14 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`λ`](#λ)
 - [Object](#object)
   - [`assert`](#assert)
-  - [`in?`](#in?)
+  - [`in?`](#in)
   - [`metaclass`](#metaclass)
-  - [`not_nil?`](#not_nil?)
+  - [`not_nil?`](#not_nil)
   - [Smalltalk's conditionals](#smalltalks-conditionals)
   - [Pipe operator](#pipe-operator)
 - [Proc](#proc)
   - [`>>`](#>>)
-  - [`<<`](#<<)
+  - [`<<`](#-1)
 - [String](#string)
   - [`first`](#first)
   - [`last`](#last)
@@ -252,6 +252,8 @@ Return the hash without keys specified.
 
 ## Kernel
 
+#### `λ`
+
 λ is lambda.
 
 ```ruby
@@ -323,7 +325,7 @@ Pipe operator à la Bash/Elixir.
 
 ## Proc
 
-#### >>
+#### `>>`
 
 Proc forward composition.
 
@@ -334,7 +336,7 @@ multiply_2_then_add_3 = multiply_2 >> sum_3
 multiply_2_then_add_3.call(3)  # => 9
 ```
 
-#### <<
+#### `<<`
 
 Proc reverse composition.
 
