@@ -1,6 +1,6 @@
 require_relative "powercore/array"
 require_relative "powercore/date"
-require_relative "powercore/fixnum"
+require_relative "powercore/integer"
 require_relative "powercore/hash"
 require_relative "powercore/kernel"
 require_relative "powercore/object"

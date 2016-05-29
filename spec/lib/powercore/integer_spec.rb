@@ -1,4 +1,4 @@
-RSpec.describe Fixnum do
+RSpec.describe Integer do
   describe "#clamp" do
     it "clamp a comparable between a lower and upper bound" do
       expect(1.clamp(3, 6)).to eq(3)

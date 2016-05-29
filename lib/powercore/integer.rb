@@ -1,4 +1,4 @@
-class Fixnum
+class Integer
   # Clamp a comparable between a lower and upper bound.
   def clamp(min, max = nil)
     if max.nil? && min.is_a?(Range)

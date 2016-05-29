@@ -29,7 +29,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`transpose` array of ranges](#transpose-array-of-ranges)
 - [Date](#date)
   - [`now`](#now)
-- [Fixnum](#fixnum)
+- [Integer](#integer)
   - [`clamp`](#clamp)
   - [`degrees`](#degrees)
   - [`negative`](#negative)
@@ -189,7 +189,7 @@ Date.now  # => #<Date: 2016-03-29 ((2457477j,0s,0n),+0s,2299161j)>
 ```
 
 
-## Fixnum
+## Integer
 
 #### `clamp`
 
