@@ -17,6 +17,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
 - [Array](#array)
   - [`average`](#average)
   - [Negative index `drop`](#negative-index-drop)
+  - [`fetch_dig`](#fetch_dig)
   - [`head`](#head)
   - [`histogram`](#histogram)
   - [`mean`](#mean)
@@ -37,6 +38,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
 - [Hash](#hash)
   - [`compact`](#compact)
   - [`except`](#except)
+  - [`fetch_dig`](#fetch_dig-1)
 - [Kernel](#kernel)
   - [`λ`](#λ)
 - [Object](#object)
@@ -77,6 +79,26 @@ If you pass a positive number, it delegates to the original implementation.
 
 ```ruby
 [1, 2, 3, 4].drop(2)  # => [3, 4]
+```
+
+#### `fetch_dig`
+
+Extracts the nested value specified by the sequence of idx objects by calling dig at each step.
+
+```ruby
+[[1, [2, 3]]].fetch_dig(0, 1, 1)  # => 3
+```
+
+If the key can’t be found with no other arguments, it will raise an `IndexError` exception.
+
+```ruby
+[[1, [2, 3]]].fetch_dig(1, 2, 3)  # => IndexError
+```
+
+If the key can’t be found and an optional code block is specified, then that will be run and its result returned.
+
+```ruby
+[[1, [2, 3]]].fetch_dig(1, 2, 3) { 2 }  # => 2
 ```
 
 #### `head`
@@ -249,6 +271,26 @@ Return the hash without keys specified.
 {a: 1, b: nil, c: nil, d: 4}.except(:b, :d)  # => {a: 1, c: nil}
 ```
 
+#### `fetch_dig`
+
+Extracts the nested value specified by the sequence of idx objects by calling dig at each step.
+
+```ruby
+{foo: {bar: {baz: 1}}}.fetch_dig(:foo, :bar, :baz)  # => 1
+```
+
+If the key can’t be found with no other arguments, it will raise an `KeyError` exception.
+
+```ruby
+{foo: {bar: {baz: 1}}}.fetch_dig(:foo, :zot, :xyz)  # => KeyError
+```
+
+If the key can’t be found and an optional code block is specified, then that will be run and its result returned.
+
+```ruby
+{foo: {bar: {baz: 1}}}.fetch_dig(:foo, :zot, :xyz) { 2 }  # => 2
+```
+
 
 ## Kernel
 
@@ -378,5 +420,12 @@ Convert string to boolean.
 ```
 
 
+## Who made this?
+
+This was made by Arturo Herrero under the MIT License. Find me on Twitter
+[@ArturoHerrero][3].
+
+
 [1]: http://edgeguides.rubyonrails.org/active_support_core_extensions.html
 [2]: https://github.com/bbatsov/powerpack
+[3]: https://twitter.com/ArturoHerrero

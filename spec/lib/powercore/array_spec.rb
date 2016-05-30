@@ -23,6 +23,26 @@ RSpec.describe Array do
     end
   end
 
+  describe "#fetch_dig" do
+    let(:array) { [[1, [2, 3]]] }
+
+    it "extracts the nested value specified by the sequence of idx objects" do
+      expect(array.fetch_dig(0, 1, 1)).to eq(3)
+    end
+
+    context "key can't be found" do
+      it "raises an IndexError exception" do
+        expect { array.fetch_dig(1, 2, 3) }.to raise_error(IndexError)
+      end
+
+      context "the optional code block is specified" do
+        it "runs the code block and its result returned" do
+          expect(array.fetch_dig(1, 2, 3) { 2 }).to eq(2)
+        end
+      end
+    end
+  end
+
   describe "#head" do
     it "returns the head of the array" do
       expect([1, 2, 3].head).to eq(1)

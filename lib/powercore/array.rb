@@ -5,6 +5,17 @@ class Array
     n >= 0 ? old_drop.bind(self).call(n) : self[0..n-1]
   end
 
+  # Extracts the nested value specified by the sequence of idx objects
+  # by calling dig at each step. If the key can’t be found, there are
+  # two options: With no other arguments, it will raise an IndexError
+  # exception; if the optional code block is specified, then that will
+  # be run and its result returned.
+  def fetch_dig(*keys, &block)
+    keys.inject(self) { |array, element| array.fetch(element) }
+  rescue IndexError
+    block&.call || raise
+  end
+
   # Return the head of the array.
   def head
     self.first
