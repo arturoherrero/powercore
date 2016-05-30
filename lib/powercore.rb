@@ -1,8 +1,1 @@
-require_relative "powercore/array"
-require_relative "powercore/date"
-require_relative "powercore/integer"
-require_relative "powercore/hash"
-require_relative "powercore/kernel"
-require_relative "powercore/object"
-require_relative "powercore/proc"
-require_relative "powercore/string"
+Dir[File.expand_path("../powercore/*.rb", __FILE__)].each { |file| require file }
