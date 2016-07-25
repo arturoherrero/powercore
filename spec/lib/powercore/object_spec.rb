@@ -23,6 +23,14 @@ RSpec.describe Object do
     end
   end
 
+  describe "#not_in?" do
+    it "checks if self is not present in the given object" do
+      expect(4.not_in?([1, 2, 3])).to eq(true)
+      expect("mo".not_in?("hello")).to eq(true)
+      expect(:c.not_in?({ a: 100, b: 200 })).to eq(true)
+    end
+  end
+
   describe "#not_nil?" do
     it "checks if an object is not nil" do
       expect(nil.not_nil?).to eq(false)

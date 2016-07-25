@@ -17,6 +17,11 @@ class Object
     end
   end
 
+  # Return true if self is not present in the given object.
+  def not_in?(object)
+    !in?(object)
+  end
+
   # Return true when an object is not nil.
   def not_nil?
     !nil?

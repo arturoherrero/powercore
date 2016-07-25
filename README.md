@@ -45,6 +45,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`assert`](#assert)
   - [`in?`](#in)
   - [`metaclass`](#metaclass)
+  - [`not_in?`](#not_in)
   - [`not_nil?`](#not_nil)
   - [Smalltalk's conditionals](#smalltalks-conditionals)
   - [Pipe operator](#pipe-operator)
@@ -330,6 +331,16 @@ Return the eigenclass.
 
 ```ruby
 Object.new.metaclass  # => #<Class:#<Object:0x007fc6427d1058>>
+```
+
+#### `not_in?`
+
+Return true if self is not present in the given object.
+
+```ruby
+4.not_in?([1, 2, 3])            # => true
+"mo".not_in?("hello")           # => true
+:c.not_in?({ a: 100, b: 200 })  # => true
 ```
 
 #### `not_nil?`
