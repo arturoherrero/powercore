@@ -36,7 +36,7 @@ class Object
   end
 
   # Pipe operator à la Bash/Elixir.
-  [Fixnum, Bignum, Array, Set, TrueClass, FalseClass, NilClass].each do |klass|
+  [Integer, Array, Set, TrueClass, FalseClass, NilClass].each do |klass|
     klass.class_eval { remove_method(:|) }
   end
   def |(pipe)

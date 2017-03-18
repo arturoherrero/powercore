@@ -28,7 +28,7 @@ class Array
 
   # Calculate the mean of the elements.
   def mean
-    self.sum ? self.sum.to_f / self.size : nil
+    self.empty? ? nil : self.sum.to_f / self.size
   end
   alias_method :average, :mean
 
@@ -61,11 +61,6 @@ class Array
     else
       self.first
     end
-  end
-
-  # Calculate the sum of the elements.
-  def sum
-    self.inject { |sum, n| sum ? sum + n : n }
   end
 
   # Return n elements from the array.

@@ -89,14 +89,6 @@ RSpec.describe Array do
     end
   end
 
-  describe "#sum" do
-    it "calculates the sum of the elements" do
-      expect([1, 2, 3, 4].sum).to eq(10)
-      expect(["a", "b", "c"].sum).to eq("abc")
-      expect([].sum).to eq(nil)
-    end
-  end
-
   describe "#take" do
     context "positive number" do
       it "returns first n elements -keeping Ruby behavior-" do

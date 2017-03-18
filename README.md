@@ -24,7 +24,6 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`median`](#median)
   - [`mode`](#mode)
   - [`percentile`](#percentile)
-  - [`sum`](#sum)
   - [Negative index `take`](#negative-index-take)
   - [`tail`](#tail)
   - [`transpose` array of ranges](#transpose-array-of-ranges)
@@ -36,7 +35,6 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`negative`](#negative)
   - [`ordinal`](#ordinal)
 - [Hash](#hash)
-  - [`compact`](#compact)
   - [`except`](#except)
   - [`fetch_dig`](#fetch_dig-1)
 - [Kernel](#kernel)
@@ -155,15 +153,6 @@ Return the percentile value for a given percentage.
 [1, 2, 3, 4, 5].percentile(50)  # => 3
 ```
 
-#### `sum`
-
-Calculate the sum of the elements.
-
-```ruby
-[1, 2, 3, 4].sum     # => 10
-["a", "b", "c"].sum  # => "abc"
-```
-
 #### Negative index `take`
 
 Returns n elements from end of the array.
@@ -255,14 +244,6 @@ Return the ordinal of the number.
 
 
 ## Hash
-
-#### `compact`
-
-Return a copy of self with all nil elements removed.
-
-```ruby
-{a: 1, b: nil, c: 3}.compact  # => {a: 1, c: 3}
-```
 
 #### `except`
 
