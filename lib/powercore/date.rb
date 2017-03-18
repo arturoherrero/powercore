@@ -1,3 +1,5 @@
+require "date"
+
 class Date
   # Return the current day.
   def self.now
