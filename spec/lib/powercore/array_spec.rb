@@ -38,6 +38,7 @@ RSpec.describe Array do
       context "the optional code block is specified" do
         it "runs the code block and its result returned" do
           expect(array.fetch_dig(1, 2, 3) { 2 }).to eq(2)
+          expect(array.fetch_dig(1, 2, 3) { 2 - 1 + 1 }).to eq(2)
         end
       end
     end
