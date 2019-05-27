@@ -27,14 +27,6 @@ class Object
     !nil?
   end
 
-  # Emulate Smalltalk's conditionals.
-  def true.-(a, &b)
-    a.call
-  end
-  def false.-(a, &b)
-    b.call
-  end
-
   # Pipe operator à la Bash/Elixir.
   [Integer, Array, Set, TrueClass, FalseClass, NilClass].each do |klass|
     klass.class_eval { remove_method(:|) }

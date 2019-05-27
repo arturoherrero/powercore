@@ -38,13 +38,6 @@ RSpec.describe Object do
     end
   end
 
-  describe "true.- and false.-" do
-    it "emulates Smalltalk's conditionals" do
-      expect((1 == 1).--> { true } { false }).to eq(true)
-      expect((4 == 2).--> { true } { false }).to eq(false)
-    end
-  end
-
   describe "pipe | it" do
     it "pipes à la Bash/Elixir" do
       expect([1,2,3] |
