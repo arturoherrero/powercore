@@ -1,8 +1,8 @@
-require "date"
+require "time"
 
 class Date
   # Returns the current day.
   def self.now
-    DateTime.now.to_date
+    Time.now.to_date
   end
 end
