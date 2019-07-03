@@ -5,6 +5,11 @@ class Array
     n >= 0 ? old_drop.bind(self).call(n) : self[0..n-1]
   end
 
+  # Returns the array without the indexes specified.
+  def except(*indexes)
+    self.reject.with_index { |_, index| indexes.include?(index) }
+  end
+
   # Extracts the nested value specified by the sequence of indexes.
   # If the key can’t be found, there are two options:
   # with no other argument, it will raise an IndexError exception;

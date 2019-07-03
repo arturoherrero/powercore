@@ -23,6 +23,12 @@ RSpec.describe Array do
     end
   end
 
+  describe "#except" do
+    it "returns the array without the indexes specified" do
+      expect([1, 2, 3, 4].except(1, 2)).to eq([1, 4])
+    end
+  end
+
   describe "#fetch_dig" do
     let(:array) { [[1, [2, 3]]] }
 

@@ -17,6 +17,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
 - [Array](#array)
   - [`average`](#average)
   - [Negative index `drop`](#negative-index-drop)
+  - [`except`](#except)
   - [`fetch_dig`](#fetch_dig)
   - [`head`](#head)
   - [`histogram`](#histogram)
@@ -35,7 +36,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`negative`](#negative)
   - [`ordinal`](#ordinal)
 - [Hash](#hash)
-  - [`except`](#except)
+  - [`except`](#except-1)
   - [`fetch_dig`](#fetch_dig-1)
 - [Kernel](#kernel)
   - [`λ`](#λ)
@@ -74,6 +75,14 @@ If you pass a positive number, it delegates to the original implementation.
 
 ```ruby
 [1, 2, 3, 4].drop(2)  # => [3, 4]
+```
+
+#### `except`
+
+Returns the array without the indexes specified.
+
+```ruby
+[1, 2, 3, 4].except(1, 2)  # => [1, 4]
 ```
 
 #### `fetch_dig`
