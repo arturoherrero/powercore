@@ -1,12 +1,12 @@
 RSpec.describe Integer do
   describe "#clamp" do
-    it "clamp a comparable between a lower and upper bound" do
+    it "clamps a comparable between a lower and upper bound" do
       expect(1.clamp(3, 6)).to eq(3)
       expect(5.clamp(3, 6)).to eq(5)
       expect(8.clamp(3, 6)).to eq(6)
     end
 
-    it "clamp a comparable between a lower and upper bound of a Range" do
+    it "clamps a comparable between a lower and upper bound of a Range" do
       expect(1.clamp(3..6)).to eq(3)
       expect(5.clamp(3..6)).to eq(5)
       expect(8.clamp(3..6)).to eq(6)

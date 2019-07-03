@@ -1,28 +1,28 @@
 class Object
-  # Assert an expression.
+  # Asserts an expression.
   AssertError = Class.new(StandardError)
   def assert(expression)
     raise(AssertError, "assertion failed") unless expression
   end
 
-  # Return true if self is present in the given object.
+  # Returns true if self is present in the given object.
   def in?(object)
     object.include?(self)
   end
 
-  # Return the eigenclass.
+  # Returns the eigenclass.
   def metaclass
     class << self
       self
     end
   end
 
-  # Return true if self is not present in the given object.
+  # Returns true if self is not present in the given object.
   def not_in?(object)
     !in?(object)
   end
 
-  # Return true when an object is not nil.
+  # Returns true when an object is not nil.
   def not_nil?
     !nil?
   end

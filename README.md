@@ -56,7 +56,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
 
 #### `average`
 
-Calculate the mean of the elements.
+Calculates the mean of the elements.
 
 ```ruby
 [1, 2, 3, 4].average  # => 2.5
@@ -64,7 +64,7 @@ Calculate the mean of the elements.
 
 #### Negative index `drop`
 
-Drop n elements from end of the array.
+Drops n elements from end of the array.
 
 ```ruby
 [1, 2, 3, 4].drop(-2)  # => [1, 2]
@@ -78,7 +78,7 @@ If you pass a positive number, it delegates to the original implementation.
 
 #### `fetch_dig`
 
-Extracts the nested value specified by the sequence of idx objects by calling dig at each step.
+Extracts the nested value specified by the sequence of indexes.
 
 ```ruby
 [[1, [2, 3]]].fetch_dig(0, 1, 1)  # => 3
@@ -98,7 +98,7 @@ If the key can’t be found and an optional code block is specified, then that w
 
 #### `head`
 
-Return the head of the array.
+Returns the head of the array.
 
 ```ruby
 [1, 2, 3].head  # => 1
@@ -106,7 +106,7 @@ Return the head of the array.
 
 #### `histogram`
 
-Build the histogram in a hash.
+Builds the histogram in a hash.
 
 ```ruby
 [2, 1, 2, 2, 3, 3].histogram  # => {1=>1, 2=>3, 3=>2}
@@ -114,7 +114,7 @@ Build the histogram in a hash.
 
 #### `mean`
 
-Calculate the mean of the elements.
+Calculates the mean of the elements.
 
 ```ruby
 [1, 2, 3, 4].mean  # => 2.5
@@ -122,7 +122,7 @@ Calculate the mean of the elements.
 
 #### `median`
 
-Calculate the median of the elements.
+Calculates the median of the elements.
 
 ```ruby
 [1, 2, 3, 4, 5].median  # => 3
@@ -131,7 +131,7 @@ Calculate the median of the elements.
 
 #### `mode`
 
-Find the mode value/s.
+Finds the mode value/s.
 
 ```ruby
 [1, 2, 3, 4].mode     # => [1, 2, 3, 4]
@@ -141,7 +141,7 @@ Find the mode value/s.
 
 #### `percentile`
 
-Return the percentile value for a given percentage.
+Returns the percentile value for a given percentage.
 
 ```ruby
 [1, 2, 3, 4].percentile(49)     # => 2
@@ -165,7 +165,7 @@ If you pass a positive number, it delegates to the original implementation.
 
 #### `tail`
 
-Return the tail of the array.
+Returns the tail of the array.
 
 ```ruby
 [1, 2, 3, 4].tail  # => [2, 3, 4]
@@ -190,7 +190,7 @@ It also works with the original implementation, assuming an array of arrays.
 
 #### `now`
 
-Return the current day.
+Returns the current day.
 
 ```ruby
 Date.now  # => #<Date: 2016-03-29 ((2457477j,0s,0n),+0s,2299161j)>
@@ -201,7 +201,7 @@ Date.now  # => #<Date: 2016-03-29 ((2457477j,0s,0n),+0s,2299161j)>
 
 #### `clamp`
 
-Clamp a comparable between a lower and upper bound.
+Clamps a comparable between a lower and upper bound.
 
 ```ruby
 1.clamp(3, 6)  # => 3
@@ -215,7 +215,7 @@ Clamp a comparable between a lower and upper bound.
 
 #### `degrees`
 
-Convert a number of degrees into radians.
+Converts a number of degrees into radians.
 
 ```ruby
 90.degrees  # => 1.5707963267948966
@@ -223,7 +223,7 @@ Convert a number of degrees into radians.
 
 #### `negative`
 
-Negate the number.
+Negates the number.
 
 ```ruby
 1.negative  # => -1
@@ -231,7 +231,7 @@ Negate the number.
 
 #### `ordinal`
 
-Return the ordinal of the number.
+Returns the ordinal of the number.
 
 ```ruby
 1.ordinal  # => "1st"
@@ -243,30 +243,30 @@ Return the ordinal of the number.
 
 #### `except`
 
-Return the hash without keys specified.
+Returns the hash without the keys specified.
 
 ```ruby
-{a: 1, b: nil, c: nil, d: 4}.except(:b, :d)  # => {a: 1, c: nil}
+{ a: 1, b: nil, c: nil, d: 4 }.except(:b, :d)  # => {a: 1, c: nil}
 ```
 
 #### `fetch_dig`
 
-Extracts the nested value specified by the sequence of idx objects by calling dig at each step.
+Extracts the nested value specified by the sequence of keys.
 
 ```ruby
-{foo: {bar: {baz: 1}}}.fetch_dig(:foo, :bar, :baz)  # => 1
+{ foo: { bar: { baz: 1 } }}.fetch_dig(:foo, :bar, :baz)  # => 1
 ```
 
 If the key can’t be found with no other arguments, it will raise an `KeyError` exception.
 
 ```ruby
-{foo: {bar: {baz: 1}}}.fetch_dig(:foo, :zot, :xyz)  # => KeyError
+{ foo: { bar: { baz: 1 } } }.fetch_dig(:foo, :zot, :xyz)  # => KeyError
 ```
 
 If the key can’t be found and an optional code block is specified, then that will be run and its result returned.
 
 ```ruby
-{foo: {bar: {baz: 1}}}.fetch_dig(:foo, :zot, :xyz) { 2 }  # => 2
+{ foo: { bar: { baz: 1 } } }.fetch_dig(:foo, :zot, :xyz) { 2 }  # => 2
 ```
 
 
@@ -285,7 +285,7 @@ my_proc = λ { }
 
 #### `assert`
 
-Assert an expression.
+Asserts an expression.
 
 ```ruby
 assert(1 == 2)  # => AssertError: AssertError
@@ -294,7 +294,7 @@ assert(1 == 1)  # => nil
 
 #### `in?`
 
-Return true if self is present in the given object.
+Returns true if self is present in the given object.
 
 ```ruby
 1.in?([1, 2, 3])            # => true
@@ -304,7 +304,7 @@ Return true if self is present in the given object.
 
 #### `metaclass`
 
-Return the eigenclass.
+Returns the eigenclass.
 
 ```ruby
 Object.new.metaclass  # => #<Class:#<Object:0x007fc6427d1058>>
@@ -312,7 +312,7 @@ Object.new.metaclass  # => #<Class:#<Object:0x007fc6427d1058>>
 
 #### `not_in?`
 
-Return true if self is not present in the given object.
+Returns true if self is not present in the given object.
 
 ```ruby
 4.not_in?([1, 2, 3])            # => true
@@ -322,7 +322,7 @@ Return true if self is not present in the given object.
 
 #### `not_nil?`
 
-Return true when an object is not nil.
+Returns true when an object is not nil.
 
 ```ruby
 nil.not_nil?  # => false
@@ -334,13 +334,13 @@ nil.not_nil?  # => false
 Pipe operator à la Bash/Elixir.
 
 ```ruby
-[1,2,3] |
+[1, 2, 3] |
   ->(array)  { array.first } |
   ->(int)    { int.to_s } |
   ->(string) { string + "2" }
 # => "12"
 
-[1,2,3] | :first | :to_s | ->(s) { s + "2" }  # => "12"
+[1, 2, 3] | :first | :to_s | ->(s) { s + "2" }  # => "12"
 ```
 
 
@@ -348,7 +348,7 @@ Pipe operator à la Bash/Elixir.
 
 #### `first`
 
-Return the first chars of the string.
+Returns the first character of the string.
 
 ```ruby
 "abc".first     # => "a"
@@ -357,7 +357,7 @@ Return the first chars of the string.
 
 #### `last`
 
-Return the last chars of the string.
+Returns the last character of the string.
 
 ```ruby
 "abc".last     # => "c"
@@ -366,7 +366,7 @@ Return the last chars of the string.
 
 #### `to_bool`
 
-Convert string to boolean.
+Converts a string to boolean.
 
 ```ruby
 "true".to_bool   # => true

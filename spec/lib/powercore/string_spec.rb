@@ -37,7 +37,7 @@ RSpec.describe String do
 
     context "not valid string" do
       it "raises an error" do
-        expect { "t".to_bool }.to raise_error(ArgumentError)
+        expect { "t".to_bool }.to raise_error(ArgumentError, "wrong element t")
       end
     end
   end

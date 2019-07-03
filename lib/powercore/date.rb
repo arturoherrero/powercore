@@ -1,7 +1,7 @@
 require "date"
 
 class Date
-  # Return the current day.
+  # Returns the current day.
   def self.now
     DateTime.now.to_date
   end

@@ -26,7 +26,7 @@ RSpec.describe Array do
   describe "#fetch_dig" do
     let(:array) { [[1, [2, 3]]] }
 
-    it "extracts the nested value specified by the sequence of idx objects" do
+    it "extracts the nested value specified by the sequence of indexes" do
       expect(array.fetch_dig(0, 1, 1)).to eq(3)
     end
 
@@ -36,7 +36,7 @@ RSpec.describe Array do
       end
 
       context "the optional code block is specified" do
-        it "runs the code block and its result returned" do
+        it "runs the code block and returns its result" do
           expect(array.fetch_dig(1, 2, 3) { 2 }).to eq(2)
           expect(array.fetch_dig(1, 2, 3) { 2 - 1 + 1 }).to eq(2)
         end
@@ -53,7 +53,7 @@ RSpec.describe Array do
 
   describe "#histogram" do
     it "builds the histogram in a hash" do
-      expect([2, 1, 2, 2, 3, 3].histogram).to eq({1=>1, 2=>3, 3=>2})
+      expect([2, 1, 2, 2, 3, 3].histogram).to eq({ 1 => 1, 2 => 3, 3 => 2 })
     end
   end
 

@@ -40,13 +40,14 @@ RSpec.describe Object do
 
   describe "pipe | it" do
     it "pipes à la Bash/Elixir" do
-      expect([1,2,3] |
-        ->(array)  { array.first } |
-        ->(int)    { int.to_s } |
-        ->(string) { string + "2" }
+      expect(
+        [1, 2, 3] |
+          ->(array)  { array.first } |
+          ->(int)    { int.to_s } |
+          ->(string) { string + "2" }
       ).to eq("12")
 
-      expect([1,2,3] | :first | :to_s | ->(s) { s + "2" }).to eq("12")
+      expect([1, 2, 3] | :first | :to_s | ->(s) { s + "2" }).to eq("12")
     end
   end
 end

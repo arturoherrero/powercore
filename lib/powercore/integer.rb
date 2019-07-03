@@ -1,5 +1,5 @@
 class Integer
-  # Clamp a comparable between a lower and upper bound.
+  # Clamps a comparable between a lower and upper bound.
   def clamp(min, max = nil)
     if max.nil? && min.is_a?(Range)
       self < min.min ? min.min : self > min.max ? min.max : self
@@ -8,17 +8,17 @@ class Integer
     end
   end
 
-  # Convert a number of degrees into radians.
+  # Converts a number of degrees into radians.
   def degrees
     self * Math::PI / 180
   end
 
-  # Negate the number.
+  # Negates the number.
   def negative
     -self
   end
 
-  # Return the ordinal of the number.
+  # Returns the ordinal of the number.
   def ordinal
     self.to_s +
       if (11..13).include?(self % 100)

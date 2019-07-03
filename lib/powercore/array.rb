@@ -1,38 +1,38 @@
 class Array
-  # Drop n elements from the array.
+  # Drops n elements from the array.
   old_drop = instance_method(:drop)
   define_method(:drop) do |n|
     n >= 0 ? old_drop.bind(self).call(n) : self[0..n-1]
   end
 
-  # Extracts the nested value specified by the sequence of idx objects
-  # by calling dig at each step. If the key can’t be found, there are
-  # two options: With no other arguments, it will raise an IndexError
-  # exception; if the optional code block is specified, then that will
-  # be run and its result returned.
-  def fetch_dig(*keys, &block)
-    keys.inject(self) { |array, element| array.fetch(element) }
+  # Extracts the nested value specified by the sequence of indexes.
+  # If the key can’t be found, there are two options:
+  # with no other argument, it will raise an IndexError exception;
+  # if the optional code block is specified,
+  # it will be executed and its result will be returned.
+  def fetch_dig(*indexes, &block)
+    indexes.inject(self) { |array, index| array.fetch(index) }
   rescue IndexError
     block&.call || raise
   end
 
-  # Return the head of the array.
+  # Returns the head of the array.
   def head
     self.first
   end
 
-  # Build the histogram in a hash.
+  # Builds the histogram in a hash.
   def histogram
     self.each_with_object(Hash.new(0)) { |n, h| h[n] += 1 }
   end
 
-  # Calculate the mean of the elements.
+  # Calculates the mean of the elements.
   def mean
     self.empty? ? nil : self.sum.to_f / self.size
   end
   alias_method :average, :mean
 
-  # Calculate the median of the elements.
+  # Calculates the median of the elements.
   def median
     return nil if self.empty?
     sorted = self.sort
@@ -45,13 +45,13 @@ class Array
     end
   end
 
-  # Find the mode value/s.
+  # Finds the mode value/s.
   def mode
     max = histogram.values.max
     histogram.map { |key, value| key if value == max }.compact
   end
 
-  # Return the percentile value for a given percentage.
+  # Returns the percentile value for a given percentage.
   def percentile(percentage)
     size = self.size
 
@@ -63,7 +63,7 @@ class Array
     end
   end
 
-  # Return n elements from the array.
+  # Returns n elements from the array.
   old_take = instance_method(:take)
   define_method(:take) do |n|
     n >= 0 ? old_take.bind(self).call(n) : self.last(n.abs)
