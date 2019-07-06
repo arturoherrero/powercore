@@ -1,12 +1,13 @@
 RSpec.describe String do
   describe "#first" do
-    it "returns the first element of self" do
+    it "returns the first character" do
       expect("abc".first).to eq("a")
       expect("".first).to eq(nil)
     end
 
     context "with paremeter" do
-      it "returns the first n elements of self" do
+      it "returns the first n characters" do
+        expect("".first(0)).to eq("")
         expect("abc".first(0)).to eq("")
         expect("abc".first(2)).to eq("ab")
         expect("abc".first(4)).to eq("abc")
@@ -14,20 +15,27 @@ RSpec.describe String do
     end
   end
 
+  describe "#head" do
+    it "returns the first character" do
+      expect("abc".head).to eq("a")
+      expect("".head).to eq(nil)
+    end
+  end
+
   describe "#init" do
-    it "returns the initial part of the string without its last element" do
+    it "returns the initial part of the string without its last character" do
       expect("abc".init).to eq("ab")
     end
   end
 
   describe "#last" do
-    it "returns the last element of self" do
+    it "returns the last character" do
       expect("abc".last).to eq("c")
       expect("".last).to eq(nil)
     end
 
     context "with paremeter" do
-      it "returns the last n elements of self" do
+      it "returns the last n characters" do
         expect("abc".last(0)).to eq("")
         expect("abc".last(2)).to eq("bc")
         expect("abc".last(4)).to eq("abc")
@@ -36,8 +44,9 @@ RSpec.describe String do
   end
 
   describe "#tail" do
-    it "get the tail of the string" do
+    it "returns the rest of the string without its first character" do
       expect("abc".tail).to eq("bc")
+      expect("".tail).to eq(nil)
     end
   end
 

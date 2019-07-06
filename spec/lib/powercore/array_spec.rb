@@ -121,7 +121,7 @@ RSpec.describe Array do
   end
 
   describe "#tail" do
-    it "get the tail of the array" do
+    it "returns the rest of the array without its first element" do
       expect([1, 2, 3, 4].tail).to eq([2, 3, 4])
     end
   end

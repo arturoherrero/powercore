@@ -1,7 +1,12 @@
 class String
-  # Returns the first chars of the string.
+  # Returns the first characters of the string.
   def first(n = nil)
     n.nil? ? self[0] : n.zero? ? "" : self[0..n - 1]
+  end
+
+  # Returns the first character of the string.
+  def head
+    self[0]
   end
 
   # The initial part of the string without its last element.

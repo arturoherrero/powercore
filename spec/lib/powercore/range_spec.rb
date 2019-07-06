@@ -1,4 +1,11 @@
 RSpec.describe Range do
+  describe "#head" do
+    it "returns the first object in the range" do
+      expect((0..3).head).to eq(0)
+      expect(("a".."z").head).to eq("a")
+    end
+  end
+
   describe "#init" do
     it "returns the initial part of the range without its last element" do
       expect((0..3).init).to eq(0..2)

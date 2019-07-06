@@ -39,6 +39,11 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
 - [Hash](#hash)
   - [`except`](#except-1)
   - [`fetch_dig`](#fetch_dig-1)
+  - [`first`](#first)
+  - [`head`](#head-1)
+  - [`init`](#init-1)
+  - [`last`](#last)
+  - [`tail`](#tail-1)
 - [Kernel](#kernel)
   - [`λ`](#λ)
 - [Object](#object)
@@ -49,13 +54,15 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`not_nil?`](#not_nil)
   - [Pipe operator](#pipe-operator)
 - [Range](#range)
-  - [`init`](#init-1)
-  - [`tail`](#tail-1)
-- [String](#string)
-  - [`first`](#first)
+  - [`head`](#head-2)
   - [`init`](#init-2)
-  - [`last`](#last)
   - [`tail`](#tail-2)
+- [String](#string)
+  - [`first`](#first-1)
+  - [`head`](#head-3)
+  - [`init`](#init-3)
+  - [`last`](#last-1)
+  - [`tail`](#tail-3)
   - [`to_bool`](#to_bool)
 
 
@@ -292,6 +299,46 @@ If the key can’t be found and an optional code block is specified, then that w
 { foo: { bar: { baz: 1 } } }.fetch_dig(:foo, :zot, :xyz) { 2 }  # => 2
 ```
 
+#### `first`
+
+Returns the first elements of the hash.
+
+```ruby
+{ a: 1, b: 2, c: 3 }.first     # => { a: 1 }
+{ a: 1, b: 2, c: 3 }.first(2)  # => { a: 1, b: 2 }
+```
+
+#### `head`
+
+Returns the first element of the hash.
+
+```ruby
+{ a: 1, b: 2, c: 3 }.head  # => { a: 1 }
+```
+
+#### `init`
+
+The initial part of the hash without its last element.
+
+```ruby
+{ a: 1, b: 2, c: 3 }.init  # => { a: 1, b: 2 }
+```
+
+#### `last`
+
+The initial part of the hash without its last element.
+
+```ruby
+{ a: 1, b: 2, c: 3 }.last  # => { c: 3 }
+```
+
+#### `tail`
+
+The rest of the hash without its first element
+
+```ruby
+{ a: 1, b: 2, c: 3 }.tail  # => { b: 2, c: 3 }
+```
 
 ## Kernel
 
@@ -369,6 +416,15 @@ Pipe operator à la Bash/Elixir.
 
 ## Range
 
+#### `head`
+
+Returns the first object in the range.
+
+```ruby
+(0..3).head      # => 0
+("a".."z").head  # => "a"
+```
+
 #### `init`
 
 The initial part of the range without its last element.
@@ -392,11 +448,19 @@ The rest of the range without its first element.
 
 #### `first`
 
-Returns the first character of the string.
+Returns the first characters of the string.
 
 ```ruby
 "abc".first     # => "a"
 "abc".first(2)  # => "ab"
+```
+
+#### `head`
+
+Returns the first characters of the string.
+
+```ruby
+"abc".head  # => "a"
 ```
 
 #### `init`
@@ -409,7 +473,7 @@ The initial part of the string without its last element.
 
 #### `last`
 
-Returns the last character of the string.
+Returns the last characters of the string.
 
 ```ruby
 "abc".last     # => "c"
