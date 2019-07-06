@@ -21,6 +21,7 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`fetch_dig`](#fetch_dig)
   - [`head`](#head)
   - [`histogram`](#histogram)
+  - [`init`](#init)
   - [`mean`](#mean)
   - [`median`](#median)
   - [`mode`](#mode)
@@ -47,9 +48,14 @@ worse, I have removed Ruby methods to do some tricks. Come and see!
   - [`not_in?`](#not_in)
   - [`not_nil?`](#not_nil)
   - [Pipe operator](#pipe-operator)
+- [Range](#range)
+  - [`init`](#init-1)
+  - [`tail`](#tail-1)
 - [String](#string)
   - [`first`](#first)
+  - [`init`](#init-2)
   - [`last`](#last)
+  - [`tail`](#tail-2)
   - [`to_bool`](#to_bool)
 
 
@@ -119,6 +125,14 @@ Builds the histogram in a hash.
 
 ```ruby
 [2, 1, 2, 2, 3, 3].histogram  # => {1=>1, 2=>3, 3=>2}
+```
+
+#### `init`
+
+The initial part of the array without its last element.
+
+```ruby
+[1, 2, 3].init  # => [1, 2]
 ```
 
 #### `mean`
@@ -353,6 +367,27 @@ Pipe operator à la Bash/Elixir.
 ```
 
 
+## Range
+
+#### `init`
+
+The initial part of the range without its last element.
+
+```ruby
+(0..3).init      # => 0..2
+("a".."z").init  # => "a".."y"
+```
+
+#### `tail`
+
+The rest of the range without its first element.
+
+```ruby
+(0..3).tail      # => 1..3
+("a".."z").tail  # => "b".."z"
+```
+
+
 ## String
 
 #### `first`
@@ -364,6 +399,14 @@ Returns the first character of the string.
 "abc".first(2)  # => "ab"
 ```
 
+#### `init`
+
+The initial part of the string without its last element.
+
+```ruby
+"abc".init  # => "ab"
+```
+
 #### `last`
 
 Returns the last character of the string.
@@ -371,6 +414,14 @@ Returns the last character of the string.
 ```ruby
 "abc".last     # => "c"
 "abc".last(2)  # => "bc"
+```
+
+#### `tail`
+
+The rest of the string without its first element.
+
+```ruby
+"abc".tail  # => "bc"
 ```
 
 #### `to_bool`

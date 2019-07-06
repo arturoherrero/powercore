@@ -31,6 +31,11 @@ class Array
     self.each_with_object(Hash.new(0)) { |n, h| h[n] += 1 }
   end
 
+  # The initial part of the array without its last element.
+  def init
+    self[0..-2]
+  end
+
   # Calculates the mean of the elements.
   def mean
     self.empty? ? nil : self.sum.to_f / self.size
@@ -74,7 +79,7 @@ class Array
     n >= 0 ? old_take.bind(self).call(n) : self.last(n.abs)
   end
 
-  # Return the tail of the array.
+  # The rest of the array without its first element.
   def tail
     self[1..-1]
   end

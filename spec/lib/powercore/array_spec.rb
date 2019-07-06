@@ -63,6 +63,12 @@ RSpec.describe Array do
     end
   end
 
+  describe "#init" do
+    it "returns the initial part of the array without its last element" do
+      expect([1, 2, 3].init).to eq([1, 2])
+    end
+  end
+
   describe "#mean" do
     it "calculates the mean of the elements" do
       expect([1, 2, 3, 4].mean).to eq(2.5)
